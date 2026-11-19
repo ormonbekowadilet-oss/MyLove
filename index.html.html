@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для Мадины ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: radial-gradient(ellipse at top, #321344, #100b20 55%, #080711);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+/* Звёздный фон */
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+/* Основная карточка */
+.card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 23px;
+    text-align: center;
+    border: 1px solid rgba(255, 150, 220, 0.3);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 50px rgba(255, 40, 160, 0.15);
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.top-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 15px #ff4c9b);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: 35px;
+    background: linear-gradient(90deg, #ff8acb, #fff, #d69aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: #e5c5e9;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.line {
+    width: 70px;
+    height: 2px;
+    margin: 25px auto;
+    background: linear-gradient(90deg, #ff54a4, #b67aff);
+    box-shadow: 0 0 12px #ff54a4;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 40px;
+    background: linear-gradient(110deg, #ff398c, #a34dff);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(255, 60, 160, 0.4);
+    transition: 0.3s;
+    margin-top: 25px;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 35px #ff55b0;
+}
+
+.message {
+    display: none;
+    margin-top: 25px;
+    padding: 20px 15px;
+    border-radius: 20px;
+    background: rgba(255, 100, 180, 0.09);
+    border: 1px solid rgba(255, 150, 220, 0.25);
+    line-height: 1.9;
+    color: #ffe4f4;
+    font-size: 16px;
+    animation: appear 1s ease;
+}
+
+.message h2 {
+    color: #ff9bd0;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.message p {
+    white-space: pre-line;
+}
+
+.signature {
+    margin-top: 18px;
+    color: #ff9bd0;
+    font-size: 18px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #b99cbd;
+    font-size: 12px;
+}
+
+/* Летающие сердечки */
+.floating {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    z-index: 1;
+    animation: fly 7s linear forwards;
+    filter: drop-shadow(0 0 8px #ff4d9d);
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.burst {
+    position: fixed;
+    pointer-events: none;
+    z-index: 5;
+    font-size: 25px;
+    animation: burst 1.5s forwards;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="card">
+
+    <div class="top-heart">❤️</div>
+
+    <h1>Для Мадины</h1>
+
+    <p class="subtitle">
+        Есть кое-что, что я давно хотел тебе сказать...
+        <br>
+        И я хочу, чтобы ты это прочитала ❤️
+    </p>
+
+    <div class="line"></div>
+
+    <p style="color:#f5cce9; font-size:14px;">
+        Один человек делает мой мир намного прекраснее.
+    </p>
+
+    <button id="openBtn" onclick="openMessage()">
+        Открыть моё послание 💌
+    </button>
+
+    <div class="message" id="message">
+
+        <h2>Моя дорогая Мадина ❤️</h2>
+
+        <p>Ты самое лучшее, что я встретил в своей жизни.
+
+Я тобою очень сильно дорожу и не хочу терять.
+
+Я тебя очень-очень сильно люблю 💋😘
+
+Спасибо тебе за то, что ты есть в моей жизни.
+Ты действительно очень много для меня значишь.
+
+Пусть у нас будет ещё много счастливых моментов вместе. ❤️</p>
+
+        <div class="signature">
+            С любовью ❤️
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Создано специально для тебя ✨
+        <br>
+        19.11.2026
+    </div>
+
+</div>
+
+<script>
+
+// Создаём звёзды
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 100; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+}
+
+// Летающие сердечки
+const hearts = ["❤️", "💗", "💕", "💖", "✨", "💜"];
+
+function createHeart() {
+    let heart = document.createElement("div");
+
+    heart.className = "floating";
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 450);
+
+// Открываем послание
+function openMessage() {
+    const message = document.getElementById("message");
+    const button = document.getElementById("openBtn");
+
+    message.style.display = "block";
+    button.innerHTML = "Я тебя очень люблю ❤️";
+    button.disabled = true;
+    button.style.opacity = "0.8";
+
+    // Взрыв сердечек
+    for (let i = 0; i < 35; i++) {
+        let heart = document.createElement("div");
+
+        heart.className = "burst";
+        heart.innerHTML =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+
+        heart.style.setProperty(
+            "--x", (Math.random() - 0.5) * 450 + "px"
+        );
+
+        heart.style.setProperty(
+            "--y", (Math.random() - 0.5) * 650 + "px"
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 1600);
+    }
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+</script>
+
+</body>
+</html>
